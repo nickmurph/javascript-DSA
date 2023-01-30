@@ -12,20 +12,8 @@ export default class LinkedListWithTail extends LinkedList {
     //overwrites the LinkedList.append method to ensure it updates this.tail
     append(newData){
         let newNode = new LinkedListNode(newData);
-
-        // if there isn't a head node already, point to newNode and exit this method
-        if (this.head === null){
-            this.head = newNode;
-            this.tail = this.head;
-            return
-        }
-        // otherwise, find the end of the list and let the last node's next attr point to newNode
-        let curNode = this.head;
-        while (curNode.next){
-            curNode = curNode.next;
-        }
-        curNode.next = newNode;
-        this.tail = newNode;
+        this.tail.next = newNode;
+        this.tail = newNode;   
     }
 
     // overwrites the LinkedList.insertAt method to ensure it updates this.tail
