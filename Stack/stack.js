@@ -1,11 +1,14 @@
 import LinkedList from "../LinkedList/linked_list.js";
 import LinkedListNode from "../LinkedList/linked_list_node.js";
 
+
+// A linked list based implementation of a Stack with the standard methods
 export default class Stack {
     constructor(firstItem = null){
         this.stack = new LinkedList(new LinkedListNode(firstItem));
         this.size = (firstItem ? 1 : 0 );
     }
+
 
     // add an item to the top of the stack, increment the size count
     push(item){
@@ -14,7 +17,7 @@ export default class Stack {
     };
 
     // removes the top item from the stack and returns it
-    // the underlying LinkedList returns its removed head node, we return that nodes data field
+    // if size is greater than zero, decrement it
     // if the stack is empty, return null
     pop(){
         this.size > 0 ? this.size-- : this.size = 0;
@@ -22,7 +25,6 @@ export default class Stack {
     };
 
     // returns the top item from the stack without removing it
-    // access the head node of the underlying stack and return its data field
     // if the stack is empty, return null
     peak(){
         return this.isEmpty() ? null : this.stack.head.data;
@@ -35,7 +37,7 @@ export default class Stack {
 
     // deletes all items from the stack
     clear(){
-
+        this.stack = new LinkedList(new LinkedListNode());
+        this.size = 0;
     };
-
 };
