@@ -7,14 +7,14 @@ export default class Stack {
         this.size = (firstItem ? 1 : 0 );
     }
 
-    // add an item to the top of the stack
+    // add an item to the top of the stack, increment the size count
     push(item){
-
+        this.stack.prepend(item);
+        this.size++;
     };
 
     // removes the top item from the stack and returns it
     pop(){
-
     };
 
     // returns the top item from the stack without removing it
