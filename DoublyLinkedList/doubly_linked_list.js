@@ -19,6 +19,7 @@ export default class DoublyLinkedList {
         if (this.head){
             let oldHead = this.head;
             this.head = this.head.next;
+            this.head.prev = null;
             return oldHead;
         }
         return null;
