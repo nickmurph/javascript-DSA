@@ -9,7 +9,6 @@ export default class DoublyLinkedList {
     // add a new node containing the newData at the START of the DoublyLinkedList
     prepend(newData){
         let newNode = new DoublyLinkedListNode(newData);
-
         this.head.prev = newNode;
         newNode.next = this.head;
         this.head = newNode;
@@ -33,7 +32,14 @@ export default class DoublyLinkedList {
     // determine whether a node containing soughtData exists
     // returns a boolean indicating whether or not the soughtData was found
     contains(soughtData){
-
+        let curNode = this.head;
+        while (curNode){
+            if (curNode.data === soughtData){
+                return true
+            }
+            curNode = curNode.next;
+        }
+        return false;
     };
 
     // remove the head node and return it
@@ -57,6 +63,7 @@ export default class DoublyLinkedList {
     // remove the tail node and return it
     // return null if there was no tail node
     removeTail(){
+
     };
 
     // iterate through the doubly linked list and add each node's data to an array
