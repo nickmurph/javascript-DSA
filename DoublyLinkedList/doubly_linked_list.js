@@ -26,7 +26,33 @@ export default class DoublyLinkedList {
     // if n is 0, prepend the new node
     // if n exceeds the number of nodes, the new node is added at the end
     insertAt(index, newData){
+        // if n is negative, change n to 0
+        index = index < 0 ? 0 : index;
 
+        if (index === 0){
+            this.prepend(newData);
+            return
+        }
+
+        let newNode = new DoublyLinkedListNode(newData);
+        let count = 0;
+        let curNode = this.head;
+
+        while (count < index && curNode){
+            curNode = curNode.next;
+            count++;
+        }
+
+        // if the end of the list has been reached, just use the append method
+        if (curNode === null){
+            this.append(newData);
+            return
+        }
+        //otherwise, insert the newNode and update relevant neighbor pointers
+        curNode.prev.next = newNode;
+        newNode.prev = curNode.prev;
+        newNode.next = curNode;
+        
     };
 
     // determine whether a node containing soughtData exists
