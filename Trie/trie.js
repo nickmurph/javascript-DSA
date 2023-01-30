@@ -1,8 +1,4 @@
-class TrieNode {
-    constructor(){
-        this.children = {};
-    }
-}
+import TrieNode from "./trie_node.js";
 
 export default class Trie {
     constructor() {
@@ -60,7 +56,7 @@ export default class Trie {
         return words;
     }
 
-
+    // returns an array of all valid endings to the given prefix
     autocomplete(prefix){
         let currentNode = this.search(prefix);
         if (!currentNode){
