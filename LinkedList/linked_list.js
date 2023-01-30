@@ -116,13 +116,3 @@ export default class LinkedList {
         console.log(this.getArrayOfData());
     };
 };
-
-// an extension of the above LinkedList class, with a this.tail pointer
-// the tail pointer allows for O(1) insertion at the end of the list via append()
-export class LinkedListWithTail extends LinkedList {
-    constructor(data){
-        super(data);
-        this.tail = this.head;
-    }
-
-}
