@@ -1,0 +1,12 @@
+{
+  "name": "javascript-data-structures",
+  "version": "1.0.0",
+  "description": "Implementations of various data structures in Javascript",
+  "main": "testing.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "module"
+}
