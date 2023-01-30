@@ -94,10 +94,6 @@ export default class LinkedList {
         return false;
     };
     
-    // delete every instance of a LinkedListNode containing data equal to deletedData
-    // deleteAll(deletedData){
-    // };
-
     // iterate through the LinkedList and add each LinkedListNode's data to an array
     // upon reaching the end of the LinkedList, return the array of data
     getArrayOfData(){
