@@ -62,12 +62,18 @@ export default class DoublyLinkedList {
     // iterate through the doubly linked list and add each node's data to an array
     // upon reaching the end of the list, return the array of data
     getArrayOfData(){
-
+        let curNode = this.head;
+        let dataList =[];
+        while (curNode){
+            dataList.push(curNode.data);
+            curNode = curNode.next;
+        }
+        return dataList;
     };
 
     // retrieve the dataList from getList() and print it to the console
     // useful for testing
     printData(){
-
+        console.log(this.getArrayOfData());
     };
 }
