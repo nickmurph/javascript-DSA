@@ -72,6 +72,19 @@ export default class LinkedList {
         return false;
     };
     
+    // remove the head node from the LinkedList and return it
+    // return null if there was no head node
+    removeHead(){
+        if (this.head){
+            let oldHead = this.head;
+            this.head = this.head.next;
+            return oldHead;
+        }
+        return null;
+    }
+
+
+
     // delete the first instance of a LinkedListNode containing data equal to deletedData
     // return true if the data was found and its node deleted, false if it didnt exist
     delete(deletedData){
