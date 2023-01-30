@@ -7,12 +7,24 @@ export default class DoublyLinkedList {
     };
 
     prepend(newData){};
-    append(newData){};
+    append(newData){
+        let newNode = DoublyLinkedListNode(newData);
+        this.tail.next = newNode;
+        newNode.prev = this.tail;
+    };
     insertAt(index, newData){};
     contains(soughtData){};
     delete(deleteData){};
-    removeHead();
-    removeTail();
+    removeHead(){
+        if (this.head){
+            let oldHead = this.head;
+            this.head = this.head.next;
+            return oldHead;
+        }
+        return null;
+    };
+    removeTail(){
+    };
     getArrayOfData(){};
     printData(){};
 }
