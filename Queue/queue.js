@@ -16,8 +16,8 @@ export default class Queue {
         this.size++;
     };
 
-    // remove the next item up in the queue, which the head of the underlying linked list
-    // return the item after removing it
+    // remove the next item up in the queue, which is the head of the underlying linked list
+    // return the item after removing it, or null if the queue is empty
     dequeue(){
         this.size > 0 ? this.size-- : this.size = 0;
         return this.isEmpty() ? null : this.queue.removeHead().data;
@@ -25,7 +25,7 @@ export default class Queue {
 
     // return the next item in the queue without removing it
     peek(){
-        return this.queue.head;
+        return this.isEmpty() ? null : this.queue.head.data;
     };
 
     // return true if the queue is empty, false if it has any number of items
@@ -35,8 +35,15 @@ export default class Queue {
 
     // delete all the items in the queue
     clear(){
-        this.queue = new LinkedListWithTail(new LinkedListNode());
+        while (this.queue.head){
+            this.queue.removeHead();
+        }
         this.size = 0;
     };
+
+    // returns an array of the items in the queue with precedence descending from left to right
+    getArray(){
+        return this.queue.getArrayOfData();
+    }
 
 };
