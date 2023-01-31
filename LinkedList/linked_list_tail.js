@@ -43,14 +43,4 @@ export default class LinkedListWithTail extends LinkedList {
        };
     };
 
-    // remove the tail node and return it
-    // return null if there was no tail node
-    removeTail(){
-        if (this.tail){
-            let oldTail = this.tail;
-            this.tail = this.tail.prev;
-            this.tail.next = null;
-            return oldTail;
-        }
-    };
 }
