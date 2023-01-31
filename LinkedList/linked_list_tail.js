@@ -9,6 +9,10 @@ export default class LinkedListWithTail extends LinkedList {
         this.tail = this.head;
     }
 
+    prepend(newData){
+        super.prepend(newData);
+    };
+
     //overwrites the LinkedList.append method to ensure it updates this.tail
     append(newData){
         let newNode = new LinkedListNode(newData);
@@ -43,4 +47,19 @@ export default class LinkedListWithTail extends LinkedList {
        };
     };
 
+    contains(soughtData){
+        return super.contains(soughtData);
+    };
+
+    removeHead(){
+        return super.removeHead();
+    }
+
+    delete(deletedData){
+        return super.delete(deletedData);
+    };
+
+    getArrayOfData(){
+        return super.getArrayOfData();
+    };
 }
