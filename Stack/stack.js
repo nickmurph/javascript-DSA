@@ -37,7 +37,14 @@ export default class Stack {
 
     // deletes all items from the stack
     clear(){
-        this.stack = new LinkedList(new LinkedListNode());
+        while (this.stack.head){
+            this.stack.removeHead();
+        }
         this.size = 0;
     };
+
+    // returns an array of the items in the stack, with the top of the stack to the left
+    getArray(){
+        return this.stack.getArrayOfData();
+    }
 };
